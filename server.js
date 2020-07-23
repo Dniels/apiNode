@@ -1,12 +1,34 @@
 const express = require('express');
 const server = express();
-const morgan = require('morgan')
+const morgan = require('morgan');
+const fs = require('fs');
 
 server.use(morgan('dev'));
+server.use(express.json());
 
-server.use((req, res , next) => {
+server.get('/',(req, res, next) => {
     res.status(200).send({
-        mensagem: 'funcionando'
+        mensagem: 'GET funcionando'
+    });
+});
+server.post('/',(req, res, next) => {
+   var arquivos =  fs.readdirSync('./json');
+   var existe = false;
+   
+   arquivos.forEach(e => {
+        if (fs.statSync('./json/' + e).birthtimeMs > (Date.now() - 600000)) {
+           if(JSON.stringify(req.body) == JSON.stringify(JSON.parse(fs.readFileSync('./json/' + e)))) {
+               existe = true;
+               console.log('ja existe o arquivo');
+        } 
+    }
+});
+
+if (existe == false)
+    fs.writeFileSync('./json/'+ Date.now().toString(),JSON.stringify(req.body));
+
+    res.status(200).send({
+        mensagem: existe ? 'ja existe' : 'gravado' 
     });
 });
 
