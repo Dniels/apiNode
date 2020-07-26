@@ -1,4 +1,3 @@
-
 const http = require('http');
 const server = require('./server')
 const os = require('os');
@@ -13,7 +12,6 @@ if(cluster.isMaster) {
     }
 } 
  else {
-
     console.log(os.cpus());
     index.listen(port);
 }

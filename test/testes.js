@@ -16,7 +16,7 @@ describe('testes', function(){
         .post('/')
         .send(jsonTeste)
         .end(function(err,res){
-            res.should.have.status(200) || res.should.have.status(403) ;
+            res.should.have.status(200) ;
             done();
         })
     });
