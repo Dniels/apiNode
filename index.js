@@ -8,7 +8,7 @@ const index = http.createServer(server);
 if(cluster.isMaster) {
     for (let c = 0; c < os.cpus().length; c++) {
         var worker = cluster.fork();
-        console.log(worker.id);
+        console.log('master - ' + worker.id);
     }
 } 
 else {

@@ -21,6 +21,7 @@ server.post('/',(req, res, next) => {
 
 if (existe == false) {
     fs.writeFileSync('./json/'+ Date.now().toString(),JSON.stringify(req.body));
+    atualizaProdutos(req.body);
 
     res.status(200). send({
         mensagem: 'OK' 
@@ -32,5 +33,36 @@ else {
 
     }
 );
+
+function atualizaProdutos(body) {
+
+    if(body.id != undefined ){
+
+        var produts =  fs.readdirSync('./products');
+
+        if(produts.length == 0){
+            fs.writeFileSync('./products/' + body.id,body.name)
+            console.log('produto cadastrado');
+        }
+        else {
+            var atualizado = false
+            produts.forEach(e => {
+                if (e == body.id) { 
+                    fs.writeFileSync('./products/' + body.id,body.name);
+                    atualizado = true;
+                    console.log('produto atualizado');
+                }
+                
+
+            });
+            //aqui não haveria a necessidade desse if nem da variavel atualizado em cima, apenas para saber se ja existia ou não
+            if (!atualizado) {
+                fs.writeFileSync('./products/' + body.id,body.name)
+                console.log('produto criado');
+            }
+        }
+    }
+};
+
 
 module.exports = server;
