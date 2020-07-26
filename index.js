@@ -1,3 +1,4 @@
+
 const http = require('http');
 const server = require('./server')
 const os = require('os');
@@ -11,9 +12,10 @@ if(cluster.isMaster) {
         console.log('master - ' + worker.id);
     }
 } 
-else {
+ else {
 
     console.log(os.cpus());
     index.listen(port);
-
 }
+
+module.exports = index;
