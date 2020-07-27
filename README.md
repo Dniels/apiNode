@@ -34,3 +34,5 @@ você obterá ` {"mensagem":"OK"} ` caso não tenha enviado os mesmos dados dent
 
 será criado um arquivo na pasta com os URLs `saidaArquivo.json`
 
+
+* caso o arquivo retornado esteja vazio, verifique se o servidor está rodando (`ruby url-aggregator-api.rb` que está disponivel na mesma pasta e tem a dependência do sinatra `gem install sinatra`).
