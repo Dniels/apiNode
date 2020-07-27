@@ -27,14 +27,14 @@ você obterá ` {"mensagem":"OK"} ` caso não tenha enviado os mesmos dados dent
 
  Para os testes automatizados foi utilizado o Mocha
 
- # Parte 01 <h3>
+ # Parte 02 <h3>
 
  rode executando:    
 `node parte2.js`
 
 *ainda está sendo necessário descompactar o arquivo para input-dump 
 
-# TODO <h5>
+# TODO (próximo push) <h5>
  * descompactar o arquivo input-dump.tar.gz automaticamente
  * agregar os 3 URLs com status 200
 
