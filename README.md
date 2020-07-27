@@ -32,9 +32,5 @@ você obterá ` {"mensagem":"OK"} ` caso não tenha enviado os mesmos dados dent
  rode executando:    
 `node parte2.js`
 
-*ainda está sendo necessário descompactar o arquivo para input-dump 
-
-# TODO (próximo push) <h5>
- * descompactar o arquivo input-dump.tar.gz automaticamente
- * agregar os 3 URLs com status 200
+será criado um arquivo na pasta com os URLs `saidaArquivo.json`
 
