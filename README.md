@@ -1,5 +1,7 @@
 # API com fins didáticos para avaliação <h1>
 
+# Parte 01 <h3>
+
 para clonar a api execute:    
 `git clone https://github.com/Dniels/apiNode.git` 
 
@@ -24,3 +26,15 @@ exemplo:
 você obterá ` {"mensagem":"OK"} ` caso não tenha enviado os mesmos dados dentro de 10 minutos, caso tenha retornará ` {"mensagem":"Forbidden"} ` 
 
  Para os testes automatizados foi utilizado o Mocha
+
+ # Parte 01 <h3>
+
+ rode executando:    
+`node parte2.js`
+
+*ainda está sendo necessário descompactar o arquivo para input-dump 
+
+# TODO <h5>
+ * descompactar o arquivo input-dump.tar.gz automaticamente
+ * agregar os 3 URLs com status 200
+
